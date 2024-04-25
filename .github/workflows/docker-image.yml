@@ -37,4 +37,4 @@ jobs:
           file: ./Dockerfile
           platforms: linux/amd64,linux/arm64,linux/arm/v7
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/plex_debrid_traktfix:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/plex_debrid_trakt:latest
