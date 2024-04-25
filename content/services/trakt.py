@@ -169,6 +169,18 @@ def post(url, data):
         response = None
     return response
 
+def post2(url, data):
+    try:
+        response = session.post(url, headers={
+            'Content-type': "application/json"}, data=data)
+        logerror(response)
+        response = json.loads(response.content, object_hook=lambda d: SimpleNamespace(**d))
+        time.sleep(1.1)
+    except:
+        response = None
+    return response
+
+
 def oauth(code=""):
     if code == "":
         response = post('https://api.trakt.tv/oauth/device/code', json.dumps({'client_id': client_id}))
